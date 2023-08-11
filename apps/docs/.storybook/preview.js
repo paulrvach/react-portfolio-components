@@ -1,4 +1,4 @@
-import "../../docs/global.css";
+import "../../../packages/acme-core/global.css";
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {

@@ -1,5 +1,5 @@
 {
   "extends": "@acme/tsconfig/react-library.json",
-  "include": ["."],
+  "include": [".", "tailwind.config.js", "../configs"],
   "exclude": ["dist", "build", "node_modules"]
 }
