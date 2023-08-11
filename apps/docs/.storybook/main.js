@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.tsx'],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials',],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-vite',
@@ -13,15 +13,11 @@ module.exports = {
     return {
       ...config,
       resolve: {
-        alias: [
-          {
-            find: '@acme/core',
-            replacement: path.resolve(
-              __dirname,
-              '../../../packages/acme-core/'
-            ),
-          },
-        ],
+        alias: {
+          '@acme/core': path.resolve(__dirname, '../../../packages/acme-core/'),
+          '@ui': path.resolve(__dirname, '../../../packages/acme-core/src'),
+          '@utils': path.resolve(__dirname, '../../../packages/acme-utils/src/index.tsx'),
+        },
       },
     };
   },
