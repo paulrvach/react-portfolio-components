@@ -2,5 +2,10 @@
   "extends": "@acme/tsconfig/react-library.json",
   "include": [".", "tailwind.config.js", "../configs" ],
   "exclude": ["dist", "build", "node_modules"],
-  
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@utils": ["../../packages/acme-utils/src/index.tsx"]
+    }
+  }
 }

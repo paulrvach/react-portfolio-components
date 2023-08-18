@@ -15,11 +15,10 @@
     "preserveWatchOutput": true,
     "skipLibCheck": true,
     "strict": true,
-      "baseUrl": ".",
-      "paths": {
-        "@ui/*": ["../../packages/acme-core/src/*"],
-        "@utils": ["../../packages/acme-utils/src/index.tsx"]
-      }
+    "baseUrl": ".",
+    "paths": {
+      "@utils": ["../../packages/acme-utils/*"]
+    }
   },
   "exclude": ["node_modules"]
 }
