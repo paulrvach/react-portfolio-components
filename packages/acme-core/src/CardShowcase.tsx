@@ -6,9 +6,8 @@ const cardShowcaseVariants = cva('inline-flex scroll-smooth gap-3 ', {
   variants: {
     direction: {
       horizontal: 'overflow-x-scroll snap-x snap-mandatory',
-      vertical: 'flex flex-col overflow-y-scroll snap-y snap-mandatory' ,
+      vertical: 'flex flex-col overflow-y-scroll snap-y snap-mandatory',
     },
-    
   },
   defaultVariants: {
     direction: 'horizontal',
@@ -38,7 +37,13 @@ export interface CardShowcaseProps
 const CardShowcase = React.forwardRef<HTMLDivElement, CardShowcaseProps>(
   // Destructure props and extract ref
   (
-    { className, children, direction = 'horizontal', align = 'start', ...props },
+    {
+      className,
+      children,
+      direction = 'horizontal',
+      align = 'start',
+      ...props
+    },
     ref
   ) => {
     // Apply the 'cn' function if you intend to use it
@@ -47,7 +52,16 @@ const CardShowcase = React.forwardRef<HTMLDivElement, CardShowcaseProps>(
     );
 
     return (
-      <div ref={ref} className={combinedClassName} {...props}>
+      <div
+        ref={ref}
+        className={combinedClassName}
+        style={{
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none',
+          overflow: 'hidden',
+        }}
+        {...props}
+      >
         {React.Children.map(children, (child) => (
           <div className={cn(cardShowcaseItemVariants({ align }))}>{child}</div>
         ))}

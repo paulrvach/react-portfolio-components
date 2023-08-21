@@ -24,6 +24,8 @@ const badgeVariants = cva(
   }
 )
 
+// TODO: multiple badges animted in
+
 export interface BadgeProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
